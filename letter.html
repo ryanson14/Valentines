@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ruby and Ryan's Valentines Website!</title>
-    <style>
-        body {
-            background-color: #FFC0CB;
-        }
-        h1 { 
-            font-family: 'Courier New';
-            color: #FF0000;
-            text-align: center;
-        }
-        h2 {
-            font-family: 'Courier New';
-            color: black;
-            font-size:medium;
-        }
-        p {
-            font-family: 'Courier New';
-            color: #250005;
-            text-align: center;
-            margin-top: 20px;
-    
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby and Ryan's Valentines Website!</title>
+  <script>
+    // Authentication check: Redirect to login page if the user is not authenticated.
+    if (localStorage.getItem("authenticated") !== "true") {
+      alert("Access Denied: Please log in to view this page.");
+      window.location.href = "index.html";
+    }
+  </script>
+  <style>
+    body {
+      background-color: #FFC0CB;
+    }
+    h1 { 
+      font-family: 'Courier New';
+      color: #FF0000;
+      text-align: center;
+    }
+    h2 {
+      font-family: 'Courier New';
+      color: black;
+      font-size: medium;
+    }
+    p {
+      font-family: 'Courier New';
+      color: #250005;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-    <h1>Happy Valentine's Day Ruby! <br>
-     </h1>
-    <h2> dear ruby, </h2>
-    <p>happy valentine's day! i hope you have enjoyed the website so far. <br>
-        blah blah blah
-    </p>
+  <h1>Happy Valentine's Day Ruby! <br></h1>
+  <h2> dear ruby, </h2>
+  <p>happy valentine's day! i hope you have enjoyed the website so far. <br>
+     blah blah blah
+  </p>
 </body>
+</html>
