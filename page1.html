@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ruby and Ryan's Valentines Website!</title>
+    <script>
+      // Authentication check: Redirect to login page if user is not authenticated.
+      if (localStorage.getItem("authenticated") !== "true") {
+        alert("Access Denied: Please log in to view this page.");
+        window.location.href = "index.html";
+      }
+    </script>
     <style>
         body {
             background-color: #FFC0CB;
@@ -20,13 +24,12 @@
             font-family: 'Times New Roman';
             color: #FF0000;
             text-align: center;
-            font-size:medium;
+            font-size: medium;
         }
         p {
             font-family: 'Times New Roman';
             color: #250005;
             text-align: center;
-    
         }
         /* Bordered form */
         
@@ -34,7 +37,7 @@
         
         /* set a style for all buttons */
         button {
-            background-color:#FF0000;
+            background-color: #FF0000;
             color: white;
             padding: 8px 12px;
             margin 8px 0;
@@ -42,52 +45,32 @@
             cursor: pointer;
             width: 20%;
         }
-   
-        
-
     </style>
 </head>
 <body>
-    <h1>Welcome!<br>
-     </h1>
+    <h1>Welcome!<br></h1>
     <h2> Please select one of the two options.</h2>
     <p> A letter written from yours truly, or a photo gallery!</p>
 </body>
 <body>
-    <img src = "IMG_9372.jpg" alt="Ruby intro"
-    style = "display: block; margin: auto; width: 400px;height:500px;">
-    
+    <img src="IMG_9372.jpg" alt="Ruby intro"
+         style="display: block; margin: auto; width: 400px; height:500px;">
 </body>
 
-<form action = "letter.html" method="get">
-    <div class = "imgcontainer".
-        
+<form action="letter.html" method="get">
+    <div class="imgcontainer">
     </div>
-
-    
     <div style="text-align: center; margin-top: 40px;">
-        <button type = "submit">Letter</button>
+        <button type="submit">Letter</button>
     </div>
-        
-      
-        
 </form>
 
-<form action = "gallery.html" method="get">
-    <div class = "imgcontainer".
-        
+<form action="gallery.html" method="get">
+    <div class="imgcontainer">
     </div>
-
-    
     <div style="text-align: center; margin-top: 40px;">
-        <button type = "submit">Gallery</button>
+        <button type="submit">Gallery</button>
     </div>
-        
-      
-        
 </form>
-
-
 
 </html>
-
