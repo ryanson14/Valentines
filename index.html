@@ -105,30 +105,62 @@
     
 </body>
 
-<form action="page1.html" method="get">
+<form id="loginForm" onsubmit="return validateForm(event)">
     <div class="imgcontainer">
         <img src="IMG_9372.jpg" alt="Avatar" class="avatar">
     </div>
 
-    <div class = "container">
+    <div class="container">
         <label for="uname"><b>Name</b></label>
-        <input type="text" placeholder = "Enter Name" name="uname" required>
+        <input type="text" placeholder="Enter Name" name="uname" required>
 
         <label for="psw"><b>Password</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type = "submit">Login</button>
+        <button type="submit">Login</button>
         <label>
-            <input type = "checkbox" checked="checked" name = "remember"> Remember me
+            <input type="checkbox" checked="checked" name="remember"> Remember me
         </label>
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
         <button type="button" class="cancelbtn">Cancel</button>
-        
     </div>
 </form>
 
+<script>
+    function validateForm(event) {
+        event.preventDefault();
+        
+        const username = document.querySelector('input[name="uname"]').value;
+        const password = document.querySelector('input[name="psw"]').value;
+        
+        // Using environment variables
+        const correctUsername = process.env.NEXT_PUBLIC_LOGIN_USERNAME;
+        const correctPassword = process.env.NEXT_PUBLIC_LOGIN_PASSWORD;
+        
+        if (username === correctUsername && password === correctPassword) {
+            localStorage.setItem('isLoggedIn', 'true');
+            window.location.href = 'page1.html';
+        } else {
+            alert('Incorrect username or password!');
+        }
+        
+        return false;
+    }
+
+    if (localStorage.getItem('isLoggedIn') === 'true') {
+        window.location.href = 'page1.html';
+    }
+</script>
+
+<script>
+    if (localStorage.getItem('isLoggedIn') !== 'true') {
+        window.location.href = 'index.html';
+    }
+</script>
+
+</body>
 
 </html>
 
